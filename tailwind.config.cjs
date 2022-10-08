@@ -15,6 +15,13 @@ module.exports = {
           200: "#ebedef",
           100: "#f2f3f5",
         },
+        green: {
+          600: "#2D7D46",
+          500: "#3BA55D",
+        },
+        blue: {
+          500: "#5865F2",
+        },
       },
       spacing: {
         88: "22rem",
