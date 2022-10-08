@@ -1,9 +1,13 @@
-import { useState } from "react";
+import Channelbar from "./components/ChannelBar";
+import ContentContainer from "./components/ContentContainer";
+import SideBar from "./components/SideBar";
 
 function App() {
   return (
-    <div className="App ">
-      <p className="text-2xl border-2 border-lime-400 rounded-lg p-2">Hello</p>
+    <div className="flex">
+      <SideBar />
+      <Channelbar />
+      <ContentContainer />
     </div>
   );
 }
