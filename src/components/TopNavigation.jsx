@@ -10,7 +10,7 @@ import useDarkMode from "../hooks/useDarkMode";
 
 const TopNavigation = () => {
   return (
-    <div className="top-navigation">
+    <div className="top-navigation shadow-sm-discord">
       <HashtagIcon />
       <Title />
       <ThemeIcon />
@@ -27,9 +27,9 @@ const ThemeIcon = () => {
   return (
     <span onClick={handleMode}>
       {darkTheme ? (
-        <FaSun size="24" className="top-navigation-icon" />
+        <FaSun size="20" className="top-navigation-icon" />
       ) : (
-        <FaMoon size="24" className="top-navigation-icon" />
+        <FaMoon size="20" className="top-navigation-icon" />
       )}
     </span>
   );
@@ -37,8 +37,8 @@ const ThemeIcon = () => {
 
 const Search = () => (
   <div className="search">
-    <input className="search-input" type="text" placeholder="Search..." />
-    <FaSearch size="18" className="text-secondary my-auto" />
+    <input className="search-input" type="text" placeholder="Search" />
+    <FaSearch size="18" className="text-gray-500 my-auto" />
   </div>
 );
 const BellIcon = () => <FaRegBell size="24" className="top-navigation-icon" />;

@@ -3,7 +3,6 @@ import { FaDiscord } from "react-icons/fa";
 import { IoMdCompass } from "react-icons/io";
 import { IoAddSharp } from "react-icons/io5";
 import { imgs } from "../assets/IconImgs";
-import { useState } from "react";
 
 const SideBar = () => {
   return (
@@ -41,16 +40,33 @@ const SideBar = () => {
 };
 
 const SideBarIcon = ({ icon, text, image = false, main = false }) => {
-  const IconColor = ` sidebar-icon-color${main ? "-main" : ""}`;
-  console.log(`sidebar-icon${image ? "" : IconColor}`);
+  // if (image) {
+  //   var IconColor = "";
+  // } else {
+  //   if (main) {
+  //     var IconColor = "sidebar-icon-color-main";
+  //   } else {
+  //     var IconColor = "sidebar-icon-color";
+  //   }
+  // }
   return (
-    <div className={`sidebar-icon${image ? "" : IconColor}`}>
-      {icon}
-      <span className="sidebar-tooltip">{text}</span>
+    <div className="sidebar-icon-wrap">
+      <div
+        className={`sidebar-icon ${
+          image ? "" : `sidebar-icon-color${main ? "-main" : ""}`
+        }`}
+      >
+        {icon}
+        <span className="sidebar-tooltip">{text}</span>
+      </div>
     </div>
   );
 };
 
-const Divider = () => <hr className="sidebar-hr" />;
+const Divider = () => (
+  <div className="sidebar-icon-wrap">
+    <hr className="sidebar-hr" />
+  </div>
+);
 
 export default SideBar;

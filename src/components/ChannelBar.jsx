@@ -8,7 +8,7 @@ const random = ["variants", "plugins"];
 
 const ChannelBar = () => {
   return (
-    <div className="channel-bar shadow-lg">
+    <div className="channel-bar">
       <ChannelBlock />
       <div className="channel-container">
         <Dropdown header="Topics" selections={topics} />
@@ -62,7 +62,7 @@ const TopicSelection = ({ selection }) => (
 );
 
 const ChannelBlock = () => (
-  <div className="channel-block">
+  <div className="channel-block shadow-sm-discord">
     <h5 className="channel-block-text">Channels</h5>
   </div>
 );
