@@ -1,5 +1,6 @@
 import TopNavigation from "./TopNavigation";
 import { BsPlusCircleFill } from "react-icons/bs";
+import { useEffect, useState } from "react";
 
 const ContentContainer = () => {
   return (
@@ -30,15 +31,38 @@ const ContentContainer = () => {
                   text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. `}
                 />
                 <Post
-                  name="Chris"
+                  name="kllie"
                   timestamp="4 days ago"
                   text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
-          amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
-          ipsum dolor sit amet consectetur adipisicing elit.
-          
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
-          ipsum dolor sit amet consectetur adipisicing elit.`}
+                  amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Lorem ipsum dolor `}
+                />
+                <Post
+                  name="bllie"
+                  timestamp="4 days ago"
+                  text={`Lorem ipsum dolor sit
+                  amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Lorem ipsum dolor. `}
+                />
+                <Post
+                  name="Chris"
+                  timestamp="4 days ago"
+                  text={`Hi! Thanks for inviting me to your lovely server! ❤️
+
+                  No dashboard is required! You can set up every function within your Discord client by running the corresponding command.
+                  
+                  • Just write L.help to get an overview of all my commands and features
+                  • You can restrict the channels which can trigger bot commands by running L.whitelist
+                  • With L.fishery you can configure the fishing idle-game / economy and read how it works
+                  
+                  Furthermore, you can also change the bot language:
+                  • 🇩🇪 German: L.language de
+                  • 🇪🇸 Spanish: L.language es
+                  • 🇷🇺 Russian: L.language ru
+                  
+                  And finally, if you have any issues with the bot, then you can take a look at the FAQ page. You can also just join the Lawliet support server and ask for help:
+                  
+                  Join Lawliet Support Server`}
                 />
                 <Post
                   name="Claire"
@@ -59,6 +83,132 @@ const ContentContainer = () => {
           amet consectetur adipisicing elit.`}
                 />
                 <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
+                  name="Rebecca"
+                  timestamp="3 hours ago"
+                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit.`}
+                />
+                <Post
                   name="H.U.N.K"
                   timestamp="Just now"
                   text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
@@ -66,6 +216,7 @@ const ContentContainer = () => {
           adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
           ipsum dolor sit amet consectetur adipisicing elit.`}
                 />
+                <div className="h-[30px] w-[1px]"></div>
               </div>
             </div>
           </div>
@@ -85,6 +236,16 @@ const BottomBar = () => (
           <input
             type="text"
             placeholder="Message #tailwind-css"
+            spellCheck="true"
+            aria-haspopup="listbox"
+            aria-invalid="false"
+            aria-autocomplete="list"
+            autoCorrect="off"
+            data-can-focus="true"
+            aria-label="Message #tailwind-css"
+            aria-multiline="true"
+            contentEditable="true"
+            zindex="-1"
             className="bottom-bar-input"
           />
         </div>
@@ -95,22 +256,32 @@ const BottomBar = () => (
 
 const Post = ({ name, timestamp, text }) => {
   const seed = Math.round(Math.random() * 100);
-  return (
-    <div className={"post"}>
-      <div className="avatar-wrapper">
-        <img
-          src={`https://avatars.dicebear.com/api/open-peeps/${seed}.svg`}
-          alt=""
-          className="avatar"
-        />
-      </div>
 
-      <div className="post-content">
-        <p className="post-owner">
+  const [pfp, setPfp] = useState([]);
+
+  const geturl = async () => {
+    const res = await fetch("https://hmtai.herokuapp.com/v2/tea");
+    setPfp(await res.json());
+  };
+
+  useEffect(() => {
+    geturl();
+  }, []);
+
+  return (
+    <div className="post mt-[17px]">
+      <div className="static">
+        <img src={pfp.url} alt="" className="avatar" />
+        <h3 className="post-owner">
           {name}
           <small className="timestamp">{timestamp}</small>
-        </p>
-        <p className="post-text">{text}</p>
+        </h3>
+        <div
+          className="relative select-text leading-[22px]
+        text-gray-800 dark:text-white whitespace-normal"
+        >
+          {text}
+        </div>
       </div>
     </div>
   );

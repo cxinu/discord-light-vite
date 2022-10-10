@@ -62,9 +62,9 @@ const TopicSelection = ({ selection }) => (
 );
 
 const ChannelBlock = () => (
-  <div className="channel-block shadow-sm-discord">
-    <h5 className="channel-block-text">Channels</h5>
-  </div>
+  <header className="channel-block shadow-sm-discord">
+    <div className="channel-block-text">private server</div>
+  </header>
 );
 
 export default ChannelBar;

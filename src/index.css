@@ -14,7 +14,7 @@
 
 body {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  font-family: "Whitney", sans-serif;
+  font-family: "Whitney Book", sans-serif;
 }
 
 img {
@@ -91,13 +91,12 @@ img {
   } */
 
   .top-navigation {
-    @apply relative z-50 flex flex-shrink-0 items-center py-0 px-2 w-full h-12
+    @apply relative z-50 flex flex-grow-0 flex-shrink-0 items-center py-0 px-2 w-full h-12
     bg-white dark:bg-gray-700 bg-opacity-90;
   }
 
   .top-navigation-icon {
-    @apply text-gray-500
-    mr-3 ml-4
+    @apply relative h-6 w-auto mx-2 text-gray-500
     transition duration-300 ease-in-out 
     hover:text-pink-400 
     cursor-pointer;
@@ -107,21 +106,10 @@ img {
     @apply ml-auto mr-4;
   }
 
-  .title-hashtag {
-    @apply text-lg tracking-wider font-semibold text-gray-500 
-    ml-2 my-auto;
-  }
-
-  .title-text {
-    @apply text-black font-semibold text-base text-opacity-80 
-    mr-auto ml-2 my-auto 
-    transition duration-300 ease-in-out;
-  }
-
   .search {
-    @apply w-1/5 flex items-center justify-start 
+    @apply relative flex items-center justify-start 
     bg-gray-300 dark:bg-gray-600
-    px-2 h-6 ml-0 mr-0 
+    px-2 h-6 mx-2
     rounded-[4px]
     transition duration-300 ease-in-out;
   }
@@ -147,9 +135,7 @@ img {
   }
 
   .post {
-    @apply w-full flex flex-row items-center justify-evenly
-    py-4 pr-8 m-0
-    cursor-pointer;
+    @apply relative py-0.5 pl-[72px] pr-12 hover:bg-gray-50;
   }
 
   .post-selected {
@@ -163,28 +149,13 @@ img {
     ml-auto;
   }
 
-  .post-text {
-    @apply text-base font-light text-left text-gray-800 dark:text-white 
-    mr-auto whitespace-normal;
-  }
-
   .post-owner {
-    @apply text-left font-semibold text-gray-800 dark:text-white mr-2 cursor-pointer;
-  }
-
-  .avatar-wrapper {
-    @apply flex flex-col items-center
-    w-12 
-    m-0 ml-auto mb-auto;
+    @apply relative leading-[22px] font-bold text-black dark:text-white cursor-pointer;
   }
 
   .avatar {
-    @apply flex-none
-    w-12 h-full 
-    rounded-full shadow-md
-    object-cover bg-gray-100 
-    mb-auto mt-0 mx-0 
-    cursor-pointer;
+    @apply absolute left-4 w-10 h-10 mt-0.5 rounded-[50%] drop-shadow-md 
+    object-cover bg-gray-100 overflow-hidden cursor-pointer;
   }
 
   .timestamp {
