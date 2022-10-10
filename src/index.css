@@ -1,6 +1,9 @@
+@import url("http://fonts.cdnfonts.com/css/whitney-2");
+
 @import-normalize;
 @tailwind base;
 @tailwind components;
+
 *,
 *::before,
 *::after {
@@ -11,6 +14,7 @@
 
 body {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  font-family: "Whitney", sans-serif;
 }
 
 img {
@@ -25,10 +29,16 @@ img {
   box-shadow: rgba(0, 0, 0, 0.18) 0px 1px 1px;
 }
 
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* color: hsla(213,9.4%,45.9%,0.24);
+  color: rgba(106, 116, 128, 0.24) */
+}
+
 @layer components {
   .sidebar-container {
-    @apply relative flex-shrink-0 w-[72px] pt-3 flex flex-col
-    bg-gray-300 dark:bg-gray-900 items-center overflow-hidden;
+    @apply relative pt-3 flex flex-col min-h-0 flex-auto
+    overflow-x-hidden overflow-y-scroll;
   }
 
   .sidebar-icon-wrap {
@@ -60,10 +70,10 @@ img {
   }
 
   .sidebar-tooltip {
-    @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md
+    @apply absolute z-[100] w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md
     dark:text-white dark:bg-gray-900 text-gray-900 bg-white
     text-xs font-bold 
-    transition-all duration-100 opacity-0 scale-95 origin-left pointer-events-none;
+    transition-all duration-100 scale-95 opacity-0 origin-left pointer-events-none;
   }
 
   .sidebar-icon:hover .sidebar-tooltip {
@@ -71,14 +81,14 @@ img {
   }
 
   .sidebar-hr {
-    @apply bg-gray-200 dark:bg-gray-800 
-    border border-gray-200 dark:border-gray-800 rounded-full
+    @apply bg-gray-400 dark:bg-gray-800 
+    border border-gray-400 dark:border-gray-800 rounded-full
     w-8;
   }
 
-  .base-container {
-    @apply relative flex overflow-hidden items-stretch justify-start flex-auto;
-  }
+  /* .base-container {
+    @apply;
+  } */
 
   .top-navigation {
     @apply relative z-50 flex flex-shrink-0 items-center py-0 px-2 w-full h-12
@@ -123,20 +133,22 @@ img {
   }
 
   .content-container {
-    @apply relative flex flex-col min-h-0 min-w-0
+    @apply relative flex flex-col min-h-0 min-w-0 flex-auto
     bg-white dark:bg-gray-700
     overflow-hidden;
   }
 
+  .content-wrap {
+    @apply relative min-h-0 min-w-0 flex-auto flex flex-row items-stretch justify-evenly;
+  }
+
   .content-list {
-    @apply absolute min-h-full min-w-full
-    top-0 bottom-0 left-0 right-0 justify-end items-stretch
-    overflow-y-scroll overflow-x-hidden;
+    @apply relative flex flex-col min-h-full justify-end items-stretch;
   }
 
   .post {
     @apply w-full flex flex-row items-center justify-evenly
-    py-4 px-8 m-0
+    py-4 pr-8 m-0
     cursor-pointer;
   }
 
@@ -152,7 +164,7 @@ img {
   }
 
   .post-text {
-    @apply text-lg text-left text-gray-800 dark:text-white 
+    @apply text-base font-light text-left text-gray-800 dark:text-white 
     mr-auto whitespace-normal;
   }
 
@@ -179,24 +191,28 @@ img {
     @apply text-xs text-left font-semibold text-gray-500 dark:text-gray-600 ml-2;
   }
 
+  .form-inputBar {
+    @apply relative flex-shrink-0 px-4 -mt-2;
+  }
+
   .bottom-bar {
-    @apply flex flex-row items-center justify-between 
-    fixed left-88 right-8 bottom-2 
+    @apply relative flex flex-row items-center justify-between 
+    left-88 right-8 bottom-2 
     rounded-lg shadow-lg 
     bg-gray-400 dark:bg-gray-600 px-2
     h-12;
   }
 
   .bottom-bar-input {
-    @apply font-semibold w-full
+    @apply font-normal w-full
     bg-transparent outline-none 
     ml-0 mr-auto
-    text-gray-500  dark:text-gray-400 placeholder-gray-500
+    text-gray-800  dark:text-gray-400 placeholder-gray-500
     cursor-text;
   }
 
   .channel-bar {
-    @apply w-60 m-0 min-h-0 flex flex-col items-stretch justify-start relative flex-shrink-0 flex-grow-0
+    @apply relative w-60 m-0 min-h-0 flex flex-col items-stretch justify-start flex-shrink-0 flex-grow-0
     bg-gray-100 dark:bg-gray-800 overflow-hidden;
   }
 

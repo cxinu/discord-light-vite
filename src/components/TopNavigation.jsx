@@ -10,14 +10,14 @@ import useDarkMode from "../hooks/useDarkMode";
 
 const TopNavigation = () => {
   return (
-    <div className="top-navigation shadow-sm-discord">
+    <section className="top-navigation shadow-sm-discord">
       <HashtagIcon />
       <Title />
       <ThemeIcon />
       <Search />
       <BellIcon />
       <UserCircle />
-    </div>
+    </section>
   );
 };
 

@@ -4,9 +4,11 @@ import ContentContainer from "./ContentContainer";
 
 const BaseContainer = () => {
   return (
-    <div className="base-container">
-      <Channelbar />
-      <ContentContainer />
+    <div className="relative flex flex-col flex-grow overflow-hidden">
+      <div className="relative flex items-stretch justify-start flex-auto">
+        <Channelbar />
+        <ContentContainer />
+      </div>
     </div>
   );
 };
