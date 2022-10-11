@@ -1,8 +1,8 @@
-import { DiscordDownloadIcon } from "../assets/DiscordDownloadIcon";
+import { DiscordDownloadIcon } from "../assets/DiscordIcons";
 import { FaDiscord } from "react-icons/fa";
 import { IoMdCompass } from "react-icons/io";
 import { IoAddSharp } from "react-icons/io5";
-import { imgs } from "../assets/IconImgs";
+import { imgs } from "../assets/DummyAPI";
 
 const SideBar = () => {
   return (

@@ -90,34 +90,41 @@ img {
     @apply;
   } */
 
+  .channel-bar {
+    @apply relative w-60 m-0 min-h-0 flex flex-col items-stretch justify-start flex-shrink-0 flex-grow-0
+    bg-gray-100 dark:bg-gray-800 overflow-hidden;
+  }
+
+  .channel-block {
+    @apply relative py-3 px-4 z-[3] items-center
+    hover:bg-gray-400 transition duration-100;
+  }
+
+  .channel-block-text {
+    @apply text-base font-semibold h-6
+    text-black dark:text-gray-400;
+  }
+
+  .dropdown-header {
+    @apply relative flex h-6 pr-2 pl-4 items-center justify-between
+    mx-0 text-gray-500
+    cursor-pointer;
+  }
+
   .top-navigation {
     @apply relative z-50 flex flex-grow-0 flex-shrink-0 items-center py-0 px-2 w-full h-12
     bg-white dark:bg-gray-700 bg-opacity-90;
   }
 
   .top-navigation-icon {
-    @apply relative h-6 w-auto mx-2 text-gray-500
-    transition duration-300 ease-in-out 
-    hover:text-pink-400 
+    @apply relative h-6 w-auto mx-2 text-gray-600
+    transition duration-75 ease-in-out 
+    hover:text-gray-800
     cursor-pointer;
   }
 
   .top-navigation-icon:first {
     @apply ml-auto mr-4;
-  }
-
-  .search {
-    @apply relative flex items-center justify-start 
-    bg-gray-300 dark:bg-gray-600
-    px-2 h-6 mx-2
-    rounded-[4px]
-    transition duration-300 ease-in-out;
-  }
-
-  .search-input {
-    @apply text-sm w-full font-sans
-    bg-transparent outline-none 
-    text-gray-800  placeholder-gray-500;
   }
 
   .content-container {
@@ -149,17 +156,9 @@ img {
     ml-auto;
   }
 
-  .post-owner {
-    @apply relative leading-[22px] font-bold text-black dark:text-white cursor-pointer;
-  }
-
   .avatar {
-    @apply absolute left-4 w-10 h-10 mt-0.5 rounded-[50%] drop-shadow-md 
+    @apply absolute left-4 w-10 h-10 mt-0.5 rounded-[50%] 
     object-cover bg-gray-100 overflow-hidden cursor-pointer;
-  }
-
-  .timestamp {
-    @apply text-xs text-left font-semibold text-gray-500 dark:text-gray-600 ml-2;
   }
 
   .form-inputBar {
@@ -180,62 +179,6 @@ img {
     ml-0 mr-auto
     text-gray-800  dark:text-gray-400 placeholder-gray-500
     cursor-text;
-  }
-
-  .channel-bar {
-    @apply relative w-60 m-0 min-h-0 flex flex-col items-stretch justify-start flex-shrink-0 flex-grow-0
-    bg-gray-100 dark:bg-gray-800 overflow-hidden;
-  }
-
-  .channel-block {
-    @apply relative py-3 px-4 z-[3] items-center
-    hover:bg-gray-300 transition duration-100;
-  }
-
-  .channel-container {
-    @apply flex flex-col items-center justify-start 
-    p-1 m-0;
-  }
-
-  .channel-block-text {
-    @apply text-base font-semibold h-6
-    text-black dark:text-gray-400;
-  }
-
-  .dropdown {
-    @apply m-0 w-full px-2 pb-2
-    transition duration-300 ease-in-out;
-  }
-
-  .dropdown-header {
-    @apply flex flex-row items-center justify-evenly
-    mx-0 text-gray-500
-    cursor-pointer;
-  }
-
-  .dropdown-header-text {
-    @apply text-gray-500  text-opacity-90 
-    text-lg font-semibold
-    cursor-default;
-  }
-
-  .dropdown-header-text-selected {
-    @apply text-blue-500 text-opacity-90 text-lg font-bold;
-  }
-
-  .dropdown-selection {
-    @apply flex flex-row items-center justify-evenly
-    mt-1 mr-auto ml-2
-    transition duration-300 ease-in-out
-    cursor-pointer;
-  }
-
-  .dropdown-selection-text {
-    @apply text-gray-500 font-semibold tracking-wide
-    mr-auto 
-    transition duration-300 ease-in-out 
-    hover:text-pink-500 dark:hover:text-gray-500
-    cursor-pointer;
   }
 }
 
