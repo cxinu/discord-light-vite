@@ -8,42 +8,43 @@ import {
   DiscordSettingsIcon,
 } from "../assets/DiscordIcons";
 
-const topics = ["tailwind-css", "react"];
-const questions = ["jit-compilation", "purge-files", "dark-mode"];
-const random = ["variants", "plugins"];
+const channels = {
+  topics: ["tailwind-css", "react"],
+  questions: ["jit-compilation", "purge-files", "dark-mode"],
+  random: ["variants", "plugins"],
+};
 
 const ChannelBar = () => {
   return (
     <div className="channel-bar">
-      <nav className="relavite flex flex-col flex-auto select-none">
+      <nav className="relavite flex flex-auto select-none flex-col">
         <ChannelBlock />
         <div className="relative flex-auto overflow-x-hidden overflow-y-scroll">
           <ul className="relative">
-            <Dropdown header="Text Channels" selections={topics} />
-            <Dropdown header="Questions" selections={questions} />
-            <Dropdown header="Random" selections={random} />
+            <Dropdown header="Text Channels" selections={channels.topics} />
+            <Dropdown header="Questions" selections={channels.questions} />
+            <Dropdown header="Random" selections={channels.random} />
           </ul>
         </div>
       </nav>
-      <section className="block bg-gray-200 flex-grow-0 flex-shrink-0">
-        <div className="flex h-[52px] px-2 mb-[1px] items-center text-sm font-semibold">
-          <div className="flex items-center min-w-[120px] -ml-0.5 pl-0.5 mr-2 rounded hover:bg-gray-400 cursor-pointer">
+      <section className="block flex-shrink-0 flex-grow-0 bg-gray-200">
+        <div className="mb-[1px] flex h-[52px] items-center px-2 text-sm font-semibold">
+          <div className="-ml-0.5 mr-2 flex min-w-[120px] cursor-pointer items-center rounded pl-0.5 hover:bg-gray-400">
             <img
               src="https://cdn.discordapp.com/attachments/981694535983833158/988469195215876126/HMmedia.gif"
               alt=""
-              className="relative rounded-[50%] object-cover mt-0 h-8 w-8"
+              className="relative mt-0 h-8 w-8 rounded-[50%] object-cover"
             />
-
-            <div className="py-1 pl-2 mr-1 select-none">
-              <div className="flex font-['Whitney Semibold'] leading-[18px]">
+            <div className="mr-1 select-none py-1 pl-2">
+              <div className="font-['Whitney Semibold'] flex leading-[18px]">
                 lunos
               </div>
-              <div className="text-xs leading-[13px] font-normal text-gray-600">
+              <div className="text-xs font-normal leading-[13px] text-gray-600">
                 #1957
               </div>
             </div>
           </div>
-          <div className="flex flex-row flex-shrink items-stretch justify-start">
+          <div className="flex flex-shrink flex-row items-stretch justify-start">
             <SectionIcon IconType={DiscordMicIcon} />
             <SectionIcon IconType={DiscordHeadsetIcon} />
             <SectionIcon IconType={DiscordSettingsIcon} />
@@ -55,7 +56,7 @@ const ChannelBar = () => {
 };
 const SectionIcon = ({ IconType, className }) => {
   return (
-    <div className="group relative flex h-8 w-8 items-center justify-center rounded hover:bg-gray-400 cursor-pointer">
+    <div className="group relative flex h-8 w-8 cursor-pointer items-center justify-center rounded hover:bg-gray-400">
       <IconType className="text-gray-600 group-hover:text-gray-800" />
     </div>
   );
@@ -70,7 +71,7 @@ const Dropdown = ({ header, selections }) => {
         <div onClick={() => setExpanded(!expanded)} className="dropdown-header">
           <div className="group flex-auto overflow-hidden hover:text-gray-800">
             <ChevronIcon expanded={expanded} />
-            <h3 className="flex-auto text-xs uppercase tracking-wide font-extrabold text-gray-600 group-hover:text-gray-800">
+            <h3 className="flex-auto text-xs font-extrabold uppercase tracking-wide text-gray-600 group-hover:text-gray-800">
               {header}
             </h3>
           </div>
@@ -104,12 +105,12 @@ const ChevronIcon = ({ expanded }) => {
 const TopicSelection = ({ selection }) => (
   <li className="relative">
     <div className="relative overflow-visible py-[1px]">
-      <div className="group relative flex flex-row px-2 ml-2 rounded items-center hover:bg-gray-300 cursor-pointer">
-        <div className="flex flex-row min-w-0 items-center p-[6px] flex-auto">
+      <div className="group relative ml-2 flex cursor-pointer flex-row items-center rounded px-2 hover:bg-gray-300">
+        <div className="flex min-w-0 flex-auto flex-row items-center p-[6px]">
           <div className="relative mr-[6px]">
             <DiscordHashIcon size="24" className="h-5 w-5 text-gray-500" />
           </div>
-          <div className="text-gray-500 font-semibold group-hover:text-gray-800">
+          <div className="font-semibold text-gray-500 group-hover:text-gray-800">
             {selection}
           </div>
         </div>

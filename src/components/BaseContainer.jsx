@@ -4,8 +4,8 @@ import ContentContainer from "./ContentContainer";
 
 const BaseContainer = () => {
   return (
-    <div className="relative flex flex-col flex-grow overflow-hidden">
-      <div className="relative flex items-stretch justify-start flex-auto">
+    <div className="relative flex flex-grow flex-col overflow-hidden">
+      <div className="relative flex flex-auto items-stretch justify-start">
         <Channelbar />
         <ContentContainer />
       </div>

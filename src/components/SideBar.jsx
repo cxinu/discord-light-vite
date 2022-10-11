@@ -6,7 +6,7 @@ import { imgs } from "../assets/DummyAPI";
 
 const SideBar = () => {
   return (
-    <nav className="relative flex flex-shrink-0 w-[72px] overflow-hidden">
+    <nav className="relative flex w-[72px] flex-shrink-0 overflow-hidden">
       <div className="sidebar-container hide-scrollbar">
         <SideBarIcon
           main={true}

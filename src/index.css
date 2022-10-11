@@ -37,53 +37,53 @@ img {
 
 @layer components {
   .sidebar-container {
-    @apply relative pt-3 flex flex-col min-h-0 flex-auto
-    overflow-x-hidden overflow-y-scroll;
+    @apply relative flex min-h-0 flex-auto flex-col overflow-x-hidden
+    overflow-y-scroll pt-3;
   }
 
   .sidebar-icon-wrap {
-    @apply relative mb-2 flex justify-center w-[72px];
+    @apply relative mb-2 flex w-[72px] justify-center;
   }
 
   .sidebar-icon {
-    @apply relative flex items-center justify-center h-12 w-12
-    hover:rounded-2xl rounded-3xl
-    transition-all duration-150 ease-linear
-    cursor-pointer shadow-sm;
+    @apply relative flex h-12 w-12 cursor-pointer items-center
+    justify-center rounded-3xl
+    shadow-sm transition-all duration-150
+    ease-linear hover:rounded-2xl;
   }
 
   .sidebar-icon-image {
-    @apply relative flex items-center justify-center h-12 w-12
-    hover:rounded-2xl rounded-3xl
+    @apply relative flex h-12 w-12 cursor-pointer items-center
+    justify-center rounded-3xl
     transition-all duration-150 ease-linear
-    cursor-pointer;
+    hover:rounded-2xl;
   }
 
   .sidebar-icon-color {
-    @apply bg-white hover:bg-green-500 dark:bg-gray-800 
-  text-green-500 hover:text-white dark:hover:bg-green-500;
+    @apply bg-white text-green-500 hover:bg-green-500 
+  hover:text-white dark:bg-gray-800 dark:hover:bg-green-500;
   }
 
   .sidebar-icon-color-main {
-    @apply bg-white text-gray-800 dark:bg-gray-800 dark:text-white
-    hover:bg-blue-500 hover:text-white dark:hover:bg-blue-500;
+    @apply bg-white text-gray-800 hover:bg-blue-500 hover:text-white
+    dark:bg-gray-800 dark:text-white dark:hover:bg-blue-500;
   }
 
   .sidebar-tooltip {
-    @apply absolute z-[100] w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md
-    dark:text-white dark:bg-gray-900 text-gray-900 bg-white
-    text-xs font-bold 
-    transition-all duration-100 scale-95 opacity-0 origin-left pointer-events-none;
+    @apply pointer-events-none absolute left-14 z-[100] m-2 w-auto min-w-max origin-left scale-95
+    rounded-md bg-white p-2 text-xs
+    font-bold text-gray-900 
+    opacity-0 shadow-md transition-all duration-100 dark:bg-gray-900 dark:text-white;
   }
 
   .sidebar-icon:hover .sidebar-tooltip {
-    @apply opacity-100 scale-100;
+    @apply scale-100 opacity-100;
   }
 
   .sidebar-hr {
-    @apply bg-gray-400 dark:bg-gray-800 
-    border border-gray-400 dark:border-gray-800 rounded-full
-    w-8;
+    @apply w-8 rounded-full 
+    border border-gray-400 bg-gray-400 dark:border-gray-800
+    dark:bg-gray-800;
   }
 
   /* .base-container {
@@ -91,36 +91,30 @@ img {
   } */
 
   .channel-bar {
-    @apply relative w-60 m-0 min-h-0 flex flex-col items-stretch justify-start flex-shrink-0 flex-grow-0
-    bg-gray-100 dark:bg-gray-800 overflow-hidden;
+    @apply relative m-0 flex min-h-0 w-60 flex-shrink-0 flex-grow-0 flex-col items-stretch justify-start
+    overflow-hidden bg-gray-100 dark:bg-gray-800;
   }
 
   .channel-block {
-    @apply relative py-3 px-4 z-[3] items-center
-    hover:bg-gray-400 transition duration-100;
+    @apply relative z-[3] items-center py-3 px-4
+    transition duration-100 hover:bg-gray-400;
   }
 
   .channel-block-text {
-    @apply text-base font-semibold h-6
+    @apply h-6 text-base font-semibold
     text-black dark:text-gray-400;
   }
 
   .dropdown-header {
-    @apply relative flex h-6 pr-2 pl-4 items-center justify-between
-    mx-0 text-gray-500
-    cursor-pointer;
+    @apply relative mx-0 flex h-6 cursor-pointer items-center justify-between pr-2 pl-4 text-gray-500;
   }
 
   .top-navigation {
-    @apply relative z-50 flex flex-grow-0 flex-shrink-0 items-center py-0 px-2 w-full h-12
-    bg-white dark:bg-gray-700 bg-opacity-90;
+    @apply relative z-50 flex h-12 w-full flex-shrink-0 flex-grow-0 items-center bg-white bg-opacity-90 py-0 px-2 dark:bg-gray-700;
   }
 
   .top-navigation-icon {
-    @apply relative h-6 w-auto mx-2 text-gray-600
-    transition duration-75 ease-in-out 
-    hover:text-gray-800
-    cursor-pointer;
+    @apply relative mx-2 h-6 w-auto cursor-pointer text-gray-600 transition duration-75 ease-in-out hover:text-gray-800;
   }
 
   .top-navigation-icon:first {
@@ -128,17 +122,15 @@ img {
   }
 
   .content-container {
-    @apply relative flex flex-col min-h-0 min-w-0 flex-auto
-    bg-white dark:bg-gray-700
-    overflow-hidden;
+    @apply relative flex min-h-0 min-w-0 flex-auto flex-col overflow-hidden bg-white dark:bg-gray-700;
   }
 
   .content-wrap {
-    @apply relative min-h-0 min-w-0 flex-auto flex flex-row items-stretch justify-evenly;
+    @apply relative flex min-h-0 min-w-0 flex-auto flex-row items-stretch justify-evenly;
   }
 
   .content-list {
-    @apply relative flex flex-col min-h-full justify-end items-stretch;
+    @apply relative flex min-h-full flex-col items-stretch justify-end;
   }
 
   .post {
@@ -146,39 +138,36 @@ img {
   }
 
   .post-selected {
-    @apply bg-green-400 dark:bg-gray-900
-    shadow-md;
+    @apply bg-green-400 shadow-md dark:bg-gray-900;
   }
 
   .post-content {
-    @apply w-4/5 
-    flex flex-col justify-start 
-    ml-auto;
+    @apply ml-auto flex w-4/5 flex-col justify-start;
   }
 
   .avatar {
-    @apply absolute left-4 w-10 h-10 mt-0.5 rounded-[50%] 
-    object-cover bg-gray-100 overflow-hidden cursor-pointer;
+    @apply absolute left-4 mt-0.5 h-10 w-10 cursor-pointer
+    overflow-hidden rounded-[50%] bg-gray-100 object-cover;
   }
 
   .form-inputBar {
-    @apply relative flex-shrink-0 px-4 -mt-2;
+    @apply relative -mt-2 flex-shrink-0 px-4;
   }
 
   .bottom-bar {
-    @apply relative flex flex-row items-center justify-between 
-    left-88 right-8 bottom-2 
-    rounded-lg shadow-lg 
-    bg-gray-400 dark:bg-gray-600 px-2
-    h-12;
+    @apply relative left-88 right-8 bottom-2 flex 
+    h-12 flex-row items-center 
+    justify-between rounded-lg 
+    bg-gray-400 px-2 shadow-lg
+    dark:bg-gray-600;
   }
 
   .bottom-bar-input {
-    @apply font-normal w-full
-    bg-transparent outline-none 
-    ml-0 mr-auto
-    text-gray-800  dark:text-gray-400 placeholder-gray-500
-    cursor-text;
+    @apply ml-0 mr-auto
+    w-full cursor-text 
+    bg-transparent font-normal
+    text-gray-800  placeholder-gray-500 outline-none
+    dark:text-gray-400;
   }
 }
 

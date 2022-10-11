@@ -18,7 +18,7 @@ const TopNavigation = () => {
         <HashtagIcon />
         <Title />
       </div>
-      <div className="flex flex-grow-0 flex-shrink-0 items-center min-w-0">
+      <div className="flex min-w-0 flex-shrink-0 flex-grow-0 items-center">
         <DiscordThreadsIcon className="top-navigation-icon" />
         <DiscordNotificationIcon className="top-navigation-icon" />
         <DiscordPinIcon className="top-navigation-icon" />
@@ -48,14 +48,14 @@ const ThemeIcon = () => {
 
 const Search = () => (
   <div
-    className="relative flex items-stretch
-    bg-gray-300 dark:bg-gray-600 
-    px-0.5 h-6 w-[144px] focus-within:w-[240px] rounded-[4px] transition-all duration-[.25s] ease-in-out"
+    className="relative flex h-6
+    w-[144px] items-stretch 
+    rounded-[4px] bg-gray-300 px-0.5 transition-all duration-[.25s] ease-in-out focus-within:w-[240px] dark:bg-gray-600"
   >
     <input
-      className="text-sm w-full px-0.5
-      bg-transparent outline-none overflow-hidden
-      text-gray-800 placeholder-gray-500"
+      className="w-full overflow-hidden bg-transparent
+      px-0.5 text-sm text-gray-800
+      placeholder-gray-500 outline-none"
       type="text"
       placeholder="Search"
     />
@@ -68,11 +68,11 @@ const Search = () => (
 const HashtagIcon = () => (
   <DiscordHashIcon
     size="24"
-    className="relative h-6 w-auto mx-2 text-gray-500"
+    className="relative mx-2 h-6 w-auto text-gray-500"
   />
 );
 const Title = () => (
-  <h1 className="flex text-black font-semibold text-[17px] leading-[22px] transition duration-300 ease-in-out">
+  <h1 className="flex text-[17px] font-semibold leading-[22px] text-black transition duration-300 ease-in-out">
     tailwind-css
   </h1>
 );
