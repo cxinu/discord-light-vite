@@ -1,7 +1,7 @@
 import TopNavigation from "./TopNavigation";
 import { BsPlusCircleFill } from "react-icons/bs";
 import { useEffect, useState } from "react";
-import { methods } from "../assets/DummyAPI";
+import { chatMessages, methods } from "../assets/DummyAPI";
 
 const ContentContainer = () => {
   return (
@@ -12,74 +12,14 @@ const ContentContainer = () => {
           <div className="relative z-0 flex min-h-0 min-w-0 flex-auto">
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-x-hidden overflow-y-scroll">
               <div className="content-list">
-                <Post
-                  name="Ada"
-                  timestamp="one week ago"
-                  text={`drinking coffee`}
-                />
-                <Post
-                  name="Sapphire"
-                  timestamp="one week ago"
-                  text={`coffee is hella mid.`}
-                />
-                <Post name="Jill" timestamp="5 days ago" text={`Lorem.`} />
-                <Post
-                  name="Ellie"
-                  timestamp="4 days ago"
-                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. `}
-                />
-                <Post
-                  name="kllie"
-                  timestamp="4 days ago"
-                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor `}
-                />
-                <Post
-                  name="bllie"
-                  timestamp="4 days ago"
-                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor. `}
-                />
-                <Post
-                  name="Chris"
-                  timestamp="4 days ago"
-                  text={`Hi! Thanks for inviting me to your lovely server! ❤️
-
-No dashboard is required! You can set up every function within your Discord client by running the corresponding command.
-
-• Just write L.help to get an overview of all my commands and features
-• You can restrict the channels which can trigger bot commands by running L.whitelist
-• With L.fishery you can configure the fishing idle-game / economy and read how it works
-
-Furthermore, you can also change the bot language:
-• 🇩🇪 German: L.language de
-• 🇪🇸 Spanish: L.language es
-• 🇷🇺 Russian: L.language ru
-
-And finally, if you have any issues with the bot, then you can take a look at the FAQ page. You can also just join the Lawliet support server and ask for help:
-
-Join Lawliet Support Server`}
-                />
-                <Post
-                  name="Claire"
-                  timestamp="2 days ago"
-                  text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
-amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
-adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. `}
-                />
-                <Post
-                  name="Albert"
-                  timestamp="Today at 6:32 PM"
-                  text={`I'm offended, but I'm a saint.`}
-                />
-                <Post
-                  name="Rebecca"
-                  timestamp="Today at 6:33 PM"
-                  text={`Masochist`}
-                />
-                <Post
-                  name="LMAO"
-                  timestamp="Today at 6:35 PM"
-                  text={`I will not disagree`}
-                />
+                {chatMessages.map((message, id) => (
+                  <Post
+                    name={message.name}
+                    timestamp={message.timestamp}
+                    text={message.text}
+                    key={id}
+                  />
+                ))}
                 <div className="h-[30px] w-[1px]"></div>
               </div>
             </div>
@@ -92,22 +32,23 @@ adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. `}
 };
 
 const Post = ({ name, timestamp, text }) => {
-  const [pfp, setPfp] = useState([]);
+  const [avatar, setAvatar] = useState([]);
   const endpoint = methods[Math.floor(Math.random() * methods.length)];
 
-  const geturl = async () => {
+  const getAvatar = async () => {
     const res = await fetch(`https://hmtai.herokuapp.com/v2/${endpoint}`);
-    setPfp(await res.json());
+    const data = await res.json();
+    setAvatar(data.url);
   };
 
   useEffect(() => {
-    geturl();
+    getAvatar();
   }, []);
 
   return (
     <div className="post mt-[17px]">
       <div className="static">
-        <img src={pfp.url} alt="" className="avatar" />
+        <img src={avatar} alt="" className="avatar" />
         <h3 className="relative min-h-[22px] font-bold leading-[22px] ">
           <span className="relative mr-1 cursor-pointer hover:underline">
             {name}
@@ -135,7 +76,7 @@ const BottomBar = () => (
           <PlusIcon />
           <input
             type="text"
-            placeholder="Message #tailwind-css"
+            placeholder="Message #general"
             spellCheck="true"
             aria-haspopup="listbox"
             aria-invalid="false"

@@ -2,7 +2,7 @@ import { DiscordDownloadIcon } from "../assets/DiscordIcons";
 import { FaDiscord } from "react-icons/fa";
 import { IoMdCompass } from "react-icons/io";
 import { IoAddSharp } from "react-icons/io5";
-import { imgs } from "../assets/DummyAPI";
+import { servers } from "../assets/DummyAPI";
 
 const SideBar = () => {
   return (
@@ -14,21 +14,14 @@ const SideBar = () => {
           text="Direct Messages"
         />
         <Divider />
-        <SideBarIcon
-          image={true}
-          icon={<img className="sidebar-icon-image" src={imgs.mid_ico} />}
-          text="Midjourney"
-        />
-        <SideBarIcon
-          image={true}
-          icon={<img className="sidebar-icon-image" src={imgs.rythem_ico} />}
-          text="Rythem"
-        />
-        <SideBarIcon
-          image={true}
-          icon={<img className="sidebar-icon-image" src={imgs.nvidia_ico} />}
-          text="Nvidia"
-        />
+        {servers.map((server, id) => (
+          <SideBarIcon
+            image={true}
+            icon={<img className="sidebar-icon-image" src={server.url} />}
+            text={server.name}
+            key={id}
+          />
+        ))}
         <SideBarIcon icon={<IoAddSharp size="25" />} text="Add a Server" />
         <SideBarIcon
           icon={<IoMdCompass size="23" />}
@@ -46,22 +39,15 @@ const SideBar = () => {
 };
 
 const SideBarIcon = ({ icon, text, image = false, main = false }) => {
-  // if (image) {
-  //   var IconColor = "";
-  // } else {
-  //   if (main) {
-  //     var IconColor = "sidebar-icon-color-main";
-  //   } else {
-  //     var IconColor = "sidebar-icon-color";
-  //   }
-  // }
+  let IconColor = "";
+  if (!image) {
+    main
+      ? (IconColor = "sidebar-icon-color-main")
+      : (IconColor = "sidebar-icon-color");
+  }
   return (
     <div className="sidebar-icon-wrap">
-      <div
-        className={`sidebar-icon ${
-          image ? "" : `sidebar-icon-color${main ? "-main" : ""}`
-        }`}
-      >
+      <div className={`sidebar-icon ${image ? "" : `${IconColor}`}`}>
         {icon}
         {/* <span className="sidebar-tooltip">{text}</span> */}
       </div>

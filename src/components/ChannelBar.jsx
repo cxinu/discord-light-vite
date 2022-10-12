@@ -7,12 +7,7 @@ import {
   DiscordHeadsetIcon,
   DiscordSettingsIcon,
 } from "../assets/DiscordIcons";
-
-const channels = {
-  topics: ["tailwind-css", "react"],
-  questions: ["jit-compilation", "purge-files", "dark-mode"],
-  random: ["variants", "plugins"],
-};
+import { channels } from "../assets/DummyAPI";
 
 const ChannelBar = () => {
   return (
@@ -21,9 +16,13 @@ const ChannelBar = () => {
         <ChannelBlock />
         <div className="relative flex-auto overflow-x-hidden overflow-y-scroll">
           <ul className="relative">
-            <Dropdown header="Text Channels" selections={channels.topics} />
-            <Dropdown header="Questions" selections={channels.questions} />
-            <Dropdown header="Random" selections={channels.random} />
+            {channels.map((channel, id) => (
+              <Dropdown
+                header={channel.header}
+                selections={channel.sub}
+                key={id}
+              />
+            ))}
           </ul>
         </div>
       </nav>
@@ -54,7 +53,7 @@ const ChannelBar = () => {
     </div>
   );
 };
-const SectionIcon = ({ IconType, className }) => {
+const SectionIcon = ({ IconType }) => {
   return (
     <div className="group relative flex h-8 w-8 cursor-pointer items-center justify-center rounded hover:bg-gray-400">
       <IconType className="text-gray-600 group-hover:text-gray-800" />
@@ -80,8 +79,8 @@ const Dropdown = ({ header, selections }) => {
       </li>
       {expanded &&
         selections &&
-        selections.map((selection, index) => (
-          <TopicSelection key={index} selection={selection} />
+        selections.map((selection, id) => (
+          <TopicSelection key={id} selection={selection} />
         ))}
     </>
   );

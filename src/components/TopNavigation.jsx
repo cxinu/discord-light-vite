@@ -71,9 +71,10 @@ const HashtagIcon = () => (
     className="relative mx-2 h-6 w-auto text-gray-500"
   />
 );
+
 const Title = () => (
   <h1 className="flex text-[17px] font-semibold leading-[22px] text-black transition duration-300 ease-in-out">
-    tailwind-css
+    general
   </h1>
 );
 
