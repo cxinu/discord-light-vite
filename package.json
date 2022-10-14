@@ -1,6 +1,5 @@
 {
-  "homepage": "https://cxinu.github.io",
-  "name": "discord-dashboard",
+  "name": "discord-light",
   "private": true,
   "version": "0.0.0",
   "type": "module",
