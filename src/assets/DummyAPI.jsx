@@ -24,7 +24,7 @@ export const channels = [
 
 export const chatMessages = [
   {
-    name: "nitroLord",
+    name: "Just Ali",
     timestamp: "Today at 4:35 PM",
     text: "Why do we have Animated profile pictures?",
   },
