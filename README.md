@@ -1,2 +1,2 @@
-# discord-dashboard
+# discord-light
  
